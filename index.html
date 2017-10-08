@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maze Crawler</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cs4620.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.theme.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.structure.min.css" rel="stylesheet">
+</head>
+<body>
+    <canvas tabindex="1" id="webglCanvas" style="border: none; background-color: black;" width="800" height="600"></canvas>
+    <div class="container">
+        <table id="dialog-form" class="table table-bordered">
+            <tr>
+                <td align="right"></td>
+                <td>
+                    <input type="button">
+                </td>
+            </tr>
+            <tr>
+                <td align="right"><b>Field of view:</b></td>
+                <td>
+                    <input type="text" id="fovSpinner" value="45.0">
+                </td>
+            </tr>
+            <tr>
+                <td align="right"><b>Eye height:</b></td>
+                <td>
+                    <input type="text" id="eyeHeightSpinner" value="0.5">
+                </td>
+            </tr>
+            <tr>
+                <td align="right"><b>Maze:</b></td>
+                <td>
+                    <textarea style="font-family: monospace" id="mazeTextArea" cols="25" rows="10">#####
+#...#
+#.#.#
+#N..#
+#####
+                    </textarea>
+                    <br>
+                    <button id="updateMazeButton">Update Maze</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/gl-matrix-min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+
+    <!-- Shaders go here -->
+    <script src="shaders/wallVertShader.glsl"></script>
+    <script src="shaders/wallFragmentShader.glsl"></script>
+
+    <script src="shaders/skyVertexShader.glsl"></script>
+    <script src="shaders/skyFragmentShader.glsl"></script>
+
+    <script src="shaders/floorVertexShader.glsl"></script>
+    <script src="shaders/floorFragmentShader.glsl"></script>
+    
+
+    <!-- renderer goes here -->
+    <script src="shaders/utils/glsl.js"></script>
+    <script src="shaders/utils/camera.js"></script>
+    <script src="shaders/utils/events.js"></script>
+    <script src="shaders/utils/render.js"></script>
+    
+    
+
+
+</body>
+</html>
